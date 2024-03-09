@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>{{ page_title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <!-- hack to fix rtl in form -->
+    <style>
+    .form-check-label {
+        padding-right: 1.25rem;
+    }
+    </style>
+</head>
+
+<body dir="rtl" style="direction : rtl; text-align: inherit">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            {% block heading %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="{{ form_url }}" method="GET" onsubmit="return preventRepeatedSubmission();">
+            <div class="form-group">
+                <label for="name">שם：</label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">שם מלא</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">מייל：</label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail">
+                <small class="form-text text-muted">האימייל שלך</small>
+            </div>
+            <div id="questions">
+            {% block form_questions %}{% endblock %}
+            </div>
+            <input type="text" name="formid" value="{{ form_id }}" hidden>
+            <input type="text" name="thank" value="תודה！" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="הגש" id="submitBtn">
+            <p class="text-muted">
+                <small>אם לא עבר מסך אחרי כמה שניות כנראה שדילגת בטעות על דוגמא. צריך למלא ציונים לכל הדוגמאות.</small>
+            </p>
+        </form>
+{#        <button class="btn btn-lg btn-info" onclick="shuffleForm();">ערבל את הסדר</button>#}
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy;האוניברסיטה העברית</p>
+    </div>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+
+        {#function shuffle(a) {#}
+        {#    for (let i = a.length - 1; i > 0; i--) {#}
+        {#        const j = Math.floor(Math.random() * (i + 1));#}
+        {#        [a[i], a[j]] = [a[j], a[i]];#}
+        {#    }#}
+        {#    return a;#}
+        {#}#}
+        {##}
+        {#function shuffleForm() {#}
+        {#    let formItems = document.getElementsByClassName("card");#}
+        {#    let formArray = Array.from(formItems);#}
+        {#    formArray.forEach((e) => e.remove());#}
+        {#    shuffle(formArray);#}
+        {#    formArray = formArray.slice(0,20)#}
+        {#    let questions = document.getElementById("questions");#}
+        {#    formArray.forEach((e) => questions.appendChild(e));#}
+        {#}#}
+        {#window.addEventListener('DOMContentLoaded', (e) => shuffleForm());#}
+    </script>
+</body>
+
+</html>

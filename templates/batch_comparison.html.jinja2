@@ -1,0 +1,110 @@
+{% extends "base.html.jinja2" %}
+{% block heading %}
+    <h1 class="display-2">מבחן איכות שמע - חלק 2</h1>
+    <p class="lead">האוניברסיטה העברית</p>
+
+    <h2 class="display-4">הוראות</h2>
+    <hr class="my-4">
+
+    <p>
+        בשאלון הקרוב תתבקשו לדרג את איכות וטבעיות השמע בקטעי דיבור קצרים שיוצרו באופן מלאכותי. ציון איכות השמע יהיה בין
+        1 (גרוע) ל-5
+        (מצויין), כאשר:
+    <ul>
+        <li>ציון 1 - גרוע - אם יש הפרעות מאוד מציקות</li>
+        <li>ציון 2 - רע - אם יש הפרעות מציקות</li>
+        <li>ציון 3 - בינוני - אם יש הפרעות קצת מציקות</li>
+        <li>ציון 4 - טוב - הפרעות קטנות, כמעט טבעי</li>
+        <li>ציון 5 - מצויין - אין הפרעות, דיבור טבעי</li>
+    </ul>
+    </p>
+    <p>
+        במתן הציון נסו להתייחס לאיכות הדיבור עצמו, צליל טבעי/רובוטי, קצב ושטף דיבור, והגייה נכונה של מילים בעברית.
+    </p>
+        <h5>
+        בכל מקטע תשמעו את כל ההקלטות ולאחר מכן תיתנו ציון לכל הקלטה.
+    </h5>
+    <p>בבקשה לעשות את המבחן בחדר שקט ועם אוזניות.</p>
+    <p>לא להשתמש בפיירפוקס כי הוא עושה בעיות. .אם יש קטעים שלא שומעים זה כי הם עדיין לא נטענו. לחכות בסבלנות בבקשה. לא
+        אמור להיות אף קטע שהוא שקט</p>
+
+
+    <p>תודה רבה על ההשתתפות! עמית</p>
+{% endblock %}
+{% block form_questions %}
+    {% for question in questions %}
+        <div class="card">
+            <div class="card-header">
+                {{ question.id }} טקסט: {{ question.prompt }}
+            </div>
+
+
+            {% for recording in question.recordings %}
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>{{ recording.title }}</h1>
+                        <p>
+                            <audio controls src="{{ recording.audio_path | urlencode }}">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ recording.name }}"
+                                   id="{{ recording.name }}_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="{{ recording.name }}_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ recording.name }}"
+                                   id="{{ recording.name }}_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="{{ recording.name }}_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ recording.name }}"
+                                   id="{{ recording.name }}_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="{{ recording.name }}_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ recording.name }}"
+                                   id="{{ recording.name }}_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="{{ recording.name }}_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="{{ recording.name }}"
+                                   id="{{ recording.name }}_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="{{ recording.name }}_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    {% endfor %}
+
+    <script type="text/javascript">
+        function shuffle(a) {
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function shuffleForm() {
+            let formItems = document.getElementsByClassName("card");
+            let formArray = Array.from(formItems);
+            formArray.forEach((e) => e.remove());
+            shuffle(formArray);
+            formArray = formArray.slice(0,2)
+            let questions = document.getElementById("questions");
+            formArray.forEach((e) => questions.appendChild(e));
+        }
+        window.addEventListener('DOMContentLoaded', (e) => shuffleForm());
+    </script>
+{% endblock %}

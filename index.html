@@ -1,0 +1,1232 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Hebrew TTS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <!-- hack to fix rtl in form -->
+    <style>
+    .form-check-label {
+        padding-right: 1.25rem;
+    }
+    </style>
+</head>
+
+<body dir="rtl" style="direction : rtl; text-align: inherit">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            
+    <h1 class="display-2">מבחן איכות שמע - חלק 2</h1>
+    <p class="lead">האוניברסיטה העברית</p>
+
+    <h2 class="display-4">הוראות</h2>
+    <hr class="my-4">
+
+    <p>
+        בשאלון הקרוב תתבקשו לדרג את איכות וטבעיות השמע בקטעי דיבור קצרים שיוצרו באופן מלאכותי. ציון איכות השמע יהיה בין
+        1 (גרוע) ל-5
+        (מצויין), כאשר:
+    <ul>
+        <li>ציון 1 - גרוע - אם יש הפרעות מאוד מציקות</li>
+        <li>ציון 2 - רע - אם יש הפרעות מציקות</li>
+        <li>ציון 3 - בינוני - אם יש הפרעות קצת מציקות</li>
+        <li>ציון 4 - טוב - הפרעות קטנות, כמעט טבעי</li>
+        <li>ציון 5 - מצויין - אין הפרעות, דיבור טבעי</li>
+    </ul>
+    </p>
+    <p>
+        במתן הציון נסו להתייחס לאיכות הדיבור עצמו, צליל טבעי/רובוטי, קצב ושטף דיבור, והגייה נכונה של מילים בעברית.
+    </p>
+        <h5>
+        בכל מקטע תשמעו את כל ההקלטות ולאחר מכן תיתנו ציון לכל הקלטה.
+    </h5>
+    <p>בבקשה לעשות את המבחן בחדר שקט ועם אוזניות.</p>
+    <p>לא להשתמש בפיירפוקס כי הוא עושה בעיות. .אם יש קטעים שלא שומעים זה כי הם עדיין לא נטענו. לחכות בסבלנות בבקשה. לא
+        אמור להיות אף קטע שהוא שקט</p>
+
+
+    <p>תודה רבה על ההשתתפות! עמית</p>
+
+        </div>
+    </div>
+
+    <div class="container" id="form_container">
+        <form id="theForm" action="https://script.google.com/macros/s/AKfycbxSa3y6Iz7MIZLejl0cqBhkrDgvbSPkpHeWprRkIECzE6KRFXjWH152gjG4Mw-nZlS3yQ/exec" method="GET" onsubmit="return preventRepeatedSubmission();">
+            <div class="form-group">
+                <label for="name">שם：</label>
+                <input class="form-control" type="text" inputmode="text" name="name" required>
+                <small class="form-text text-muted">שם מלא</small>
+            </div>
+            <div class="form-group">
+                <label for="mail">מייל：</label>
+                <input class="form-control" type="text" inputmode="email" placeholder="account@example.com" name="mail">
+                <small class="form-text text-muted">האימייל שלך</small>
+            </div>
+            <div id="questions">
+            
+    
+        <div class="card">
+            <div class="card-header">
+                0 טקסט: אבל מה שעובר על סמוטריץ הוא לא הסיפור. הסיפור הוא משהו אחר לגמרי.
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/1.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_1"
+                                   id="char_1_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_1_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_1"
+                                   id="char_1_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_1_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_1"
+                                   id="char_1_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_1_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_1"
+                                   id="char_1_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_1_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_1"
+                                   id="char_1_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_1_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/1.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_1"
+                                   id="word_1_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_1_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_1"
+                                   id="word_1_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_1_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_1"
+                                   id="word_1_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_1_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_1"
+                                   id="word_1_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_1_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_1"
+                                   id="word_1_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_1_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/1.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_1"
+                                   id="word_old_1_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_1_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_1"
+                                   id="word_old_1_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_1_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_1"
+                                   id="word_old_1_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_1_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_1"
+                                   id="word_old_1_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_1_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_1"
+                                   id="word_old_1_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_1_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+        <div class="card">
+            <div class="card-header">
+                1 טקסט: ובשביל להבין למה מחיר הדלק כל כך עלה, צריך לחזור שנתיים אחורנית.
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/2.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_2"
+                                   id="char_2_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_2_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_2"
+                                   id="char_2_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_2_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_2"
+                                   id="char_2_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_2_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_2"
+                                   id="char_2_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_2_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_2"
+                                   id="char_2_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_2_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/2.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_2"
+                                   id="word_2_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_2_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_2"
+                                   id="word_2_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_2_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_2"
+                                   id="word_2_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_2_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_2"
+                                   id="word_2_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_2_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_2"
+                                   id="word_2_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_2_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/2.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_2"
+                                   id="word_old_2_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_2_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_2"
+                                   id="word_old_2_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_2_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_2"
+                                   id="word_old_2_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_2_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_2"
+                                   id="word_old_2_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_2_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_2"
+                                   id="word_old_2_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_2_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+        <div class="card">
+            <div class="card-header">
+                2 טקסט: כששאלתי אותה למה היא החליטה לפתוח עסק של לק ג'ל, התשובה שלה היתה מאוד ברורה,
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/3.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_3"
+                                   id="char_3_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_3_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_3"
+                                   id="char_3_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_3_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_3"
+                                   id="char_3_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_3_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_3"
+                                   id="char_3_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_3_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_3"
+                                   id="char_3_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_3_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/3.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_3"
+                                   id="word_3_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_3_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_3"
+                                   id="word_3_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_3_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_3"
+                                   id="word_3_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_3_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_3"
+                                   id="word_3_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_3_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_3"
+                                   id="word_3_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_3_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/3.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_3"
+                                   id="word_old_3_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_3_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_3"
+                                   id="word_old_3_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_3_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_3"
+                                   id="word_old_3_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_3_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_3"
+                                   id="word_old_3_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_3_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_3"
+                                   id="word_old_3_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_3_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+        <div class="card">
+            <div class="card-header">
+                3 טקסט: תגידו, גנבו לכם פעם את האוטו ופשוט ידעתם שאין טעם להגיש תלונה במשטרה?
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/4.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_4"
+                                   id="char_4_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_4_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_4"
+                                   id="char_4_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_4_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_4"
+                                   id="char_4_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_4_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_4"
+                                   id="char_4_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_4_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_4"
+                                   id="char_4_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_4_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/4.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_4"
+                                   id="word_4_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_4_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_4"
+                                   id="word_4_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_4_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_4"
+                                   id="word_4_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_4_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_4"
+                                   id="word_4_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_4_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_4"
+                                   id="word_4_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_4_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/4.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_4"
+                                   id="word_old_4_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_4_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_4"
+                                   id="word_old_4_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_4_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_4"
+                                   id="word_old_4_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_4_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_4"
+                                   id="word_old_4_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_4_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_4"
+                                   id="word_old_4_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_4_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+        <div class="card">
+            <div class="card-header">
+                4 טקסט: מה שבהגדרה משאיר את הכלכלה ההונגרית מאחור, אפילו ביחס למדינות כמו פולין
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/5.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_5"
+                                   id="char_5_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_5_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_5"
+                                   id="char_5_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_5_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_5"
+                                   id="char_5_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_5_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_5"
+                                   id="char_5_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_5_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_5"
+                                   id="char_5_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_5_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/5.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_5"
+                                   id="word_5_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_5_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_5"
+                                   id="word_5_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_5_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_5"
+                                   id="word_5_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_5_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_5"
+                                   id="word_5_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_5_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_5"
+                                   id="word_5_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_5_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/5.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_5"
+                                   id="word_old_5_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_5_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_5"
+                                   id="word_old_5_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_5_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_5"
+                                   id="word_old_5_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_5_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_5"
+                                   id="word_old_5_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_5_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_5"
+                                   id="word_old_5_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_5_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+        <div class="card">
+            <div class="card-header">
+                5 טקסט: הדרבי תמיד היה המשחק הכי חשוב, אך בשנים האחרונות הוא נעשה כמעט הדבר היחיד שחשוב
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/6.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_6"
+                                   id="char_6_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_6_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_6"
+                                   id="char_6_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_6_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_6"
+                                   id="char_6_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_6_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_6"
+                                   id="char_6_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_6_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_6"
+                                   id="char_6_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_6_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/6.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_6"
+                                   id="word_6_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_6_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_6"
+                                   id="word_6_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_6_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_6"
+                                   id="word_6_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_6_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_6"
+                                   id="word_6_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_6_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_6"
+                                   id="word_6_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_6_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/6.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_6"
+                                   id="word_old_6_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_6_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_6"
+                                   id="word_old_6_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_6_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_6"
+                                   id="word_old_6_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_6_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_6"
+                                   id="word_old_6_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_6_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_6"
+                                   id="word_old_6_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_6_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+        <div class="card">
+            <div class="card-header">
+                6 טקסט: בראשית הייתה חללית מסוג נחתת, שפותחה על ידי עמותת ספייס איי אל ונבנתה על ידי התעשייה האווירית לישראל במטרה להיות הנחתת הישראלית הראשונה על הירח
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/7.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_7"
+                                   id="char_7_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_7_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_7"
+                                   id="char_7_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_7_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_7"
+                                   id="char_7_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_7_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_7"
+                                   id="char_7_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_7_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_7"
+                                   id="char_7_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_7_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/7.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_7"
+                                   id="word_7_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_7_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_7"
+                                   id="word_7_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_7_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_7"
+                                   id="word_7_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_7_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_7"
+                                   id="word_7_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_7_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_7"
+                                   id="word_7_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_7_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/7.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_7"
+                                   id="word_old_7_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_7_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_7"
+                                   id="word_old_7_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_7_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_7"
+                                   id="word_old_7_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_7_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_7"
+                                   id="word_old_7_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_7_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_7"
+                                   id="word_old_7_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_7_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+        <div class="card">
+            <div class="card-header">
+                7 טקסט: כשני שלישים מייצור הסוללות העולמי מתרחשים בסין לעומת עשרה אחוזים בארצות הברית
+            </div>
+
+
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>char</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/char/8.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_8"
+                                   id="char_8_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="char_8_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_8"
+                                   id="char_8_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="char_8_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_8"
+                                   id="char_8_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="char_8_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_8"
+                                   id="char_8_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="char_8_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="char_8"
+                                   id="char_8_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="char_8_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word/8.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_8"
+                                   id="word_8_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_8_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_8"
+                                   id="word_8_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_8_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_8"
+                                   id="word_8_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_8_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_8"
+                                   id="word_8_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_8_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_8"
+                                   id="word_8_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_8_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="card-body">
+                    <div class="form-group">
+                        <h1>word_old</h1>
+                        <p>
+                            <audio controls src="samples_tokenizers/word_old/8.wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_8"
+                                   id="word_old_8_5"
+                                   value="5" required>
+                            <label class="form-check-label" for="word_old_8_5">5 (מצויין)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_8"
+                                   id="word_old_8_4"
+                                   value="4" required>
+                            <label class="form-check-label" for="word_old_8_4">4 (טוב)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_8"
+                                   id="word_old_8_3"
+                                   value="3" required>
+                            <label class="form-check-label" for="word_old_8_3">3 (בינוני)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_8"
+                                   id="word_old_8_2"
+                                   value="2" required>
+                            <label class="form-check-label" for="word_old_8_2">2 (רע)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="word_old_8"
+                                   id="word_old_8_1"
+                                   value="1" required>
+                            <label class="form-check-label" for="word_old_8_1">1 (גרוע)</label>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+        </div>
+    
+
+    <script type="text/javascript">
+        function shuffle(a) {
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function shuffleForm() {
+            let formItems = document.getElementsByClassName("card");
+            let formArray = Array.from(formItems);
+            formArray.forEach((e) => e.remove());
+            shuffle(formArray);
+            formArray = formArray.slice(0,2)
+            let questions = document.getElementById("questions");
+            formArray.forEach((e) => questions.appendChild(e));
+        }
+        window.addEventListener('DOMContentLoaded', (e) => shuffleForm());
+    </script>
+
+            </div>
+            <input type="text" name="formid" value="1" hidden>
+            <input type="text" name="thank" value="תודה！" hidden>
+            <input class="btn btn-info btn-lg" type="submit" value="הגש" id="submitBtn">
+            <p class="text-muted">
+                <small>אם לא עבר מסך אחרי כמה שניות כנראה שדילגת בטעות על דוגמא. צריך למלא ציונים לכל הדוגמאות.</small>
+            </p>
+        </form>
+
+    </div>
+
+    <div class="container" style="padding-top: 60px;">
+        <p class="text-center text-muted">&copy;האוניברסיטה העברית</p>
+    </div>
+
+    <script type="text/javascript">
+        function preventRepeatedSubmission() {
+            document.getElementById('submitBtn').disabled = true;
+            setTimeout("submitBtn.disabled=false;", 5000);
+            return true;
+        };
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+
+</html>
