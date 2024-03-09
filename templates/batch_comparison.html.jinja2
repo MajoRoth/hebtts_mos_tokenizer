@@ -7,43 +7,47 @@
     <hr class="my-4">
 
     <p>
-        בשאלון הקרוב תתבקשו לדרג את איכות וטבעיות השמע בקטעי דיבור קצרים שיוצרו באופן מלאכותי. ציון איכות השמע יהיה בין
-        1 (גרוע) ל-5
-        (מצויין), כאשר:
-    <ul>
-        <li>ציון 1 - גרוע - אם יש הפרעות מאוד מציקות</li>
-        <li>ציון 2 - רע - אם יש הפרעות מציקות</li>
-        <li>ציון 3 - בינוני - אם יש הפרעות קצת מציקות</li>
-        <li>ציון 4 - טוב - הפרעות קטנות, כמעט טבעי</li>
-        <li>ציון 5 - מצויין - אין הפרעות, דיבור טבעי</li>
-    </ul>
+        בשאלון הקרוב תתבקשו לדרג את איכות וטבעיות השמע בקטעי דיבור קצרים שיוצרו באופן מלאכותי.
     </p>
+    <p>ציון איכות השמע יהיה בין
+        1 (גרוע) ל-5
+        (מצויין)</p>
     <p>
         במתן הציון נסו להתייחס לאיכות הדיבור עצמו, צליל טבעי/רובוטי, קצב ושטף דיבור, והגייה נכונה של מילים בעברית.
     </p>
         <h5>
         בכל מקטע תשמעו את כל ההקלטות ולאחר מכן תיתנו ציון לכל הקלטה.
     </h5>
-    <p>בבקשה לעשות את המבחן בחדר שקט ועם אוזניות.</p>
-    <p>לא להשתמש בפיירפוקס כי הוא עושה בעיות. .אם יש קטעים שלא שומעים זה כי הם עדיין לא נטענו. לחכות בסבלנות בבקשה. לא
-        אמור להיות אף קטע שהוא שקט</p>
+    <p>בטעינת המבחן הקטעים נדגמו מאוסף קטעים גדול וסודרו באופן רנדומלי.</p>
+    <p>נבקש לעשות את המבחן בחדר שקט ועם אוזניות.</p>
+    <p>
+        המבחן לא תומך בדפדפן פיירפוקס.
 
+    </p>
+    <p>
+        אין קטעים שקטים במבחן, אם לא שומעים דגימה זה כי היא עדיין בטעינה.
 
-    <p>תודה רבה על ההשתתפות! עמית</p>
+    </p>
+    <p>
+        תודה רבה על ההשתתפות! עמית.
+    </p>
+
 {% endblock %}
 {% block form_questions %}
     {% for question in questions %}
         <div class="card">
             <div class="card-header">
-                {{ question.id }} טקסט: {{ question.prompt }}
-            </div>
+                <h6>
+
+                 טקסט: {{ question.prompt }}
+
+                </h6></div>
 
 
             {% for recording in question.recordings %}
 
                 <div class="card-body">
                     <div class="form-group">
-                        <h1>{{ recording.title }}</h1>
                         <p>
                             <audio controls src="{{ recording.audio_path | urlencode }}">
                                 Your browser does not support the audio element.
@@ -101,7 +105,7 @@
             let formArray = Array.from(formItems);
             formArray.forEach((e) => e.remove());
             shuffle(formArray);
-            formArray = formArray.slice(0,2)
+            formArray = formArray.slice(0,3)
             let questions = document.getElementById("questions");
             formArray.forEach((e) => questions.appendChild(e));
         }
